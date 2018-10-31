@@ -106,7 +106,12 @@ struct __AtAutoreleasePool {
 };
 
 #define __OFFSETOFIVAR__(TYPE, MEMBER) ((long long) &((TYPE *)0)->MEMBER)
-static __NSConstantStringImpl __NSConstantStringImpl__var_folders_ds_b39fj4_50m17wz1nfpxf0_0r0000gn_T_ViewController_14580b_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"In Block:%d",11};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_ds_b39fj4_50m17wz1nfpxf0_0r0000gn_T_ViewController_d953e0_mi_0 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"Person instance:%@, %ld",23};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_ds_b39fj4_50m17wz1nfpxf0_0r0000gn_T_ViewController_d953e0_mi_1 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"Global Block",12};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_ds_b39fj4_50m17wz1nfpxf0_0r0000gn_T_ViewController_d953e0_mi_2 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"max",3};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_ds_b39fj4_50m17wz1nfpxf0_0r0000gn_T_ViewController_d953e0_mi_3 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"In Block:%@",11};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_ds_b39fj4_50m17wz1nfpxf0_0r0000gn_T_ViewController_d953e0_mi_4 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"Out Block:%@",12};
+static __NSConstantStringImpl __NSConstantStringImpl__var_folders_ds_b39fj4_50m17wz1nfpxf0_0r0000gn_T_ViewController_d953e0_mi_5 __attribute__ ((section ("__DATA, __cfstring"))) = {__CFConstantStringClassReference,0x000007c8,"%@",2};
 
 
 
@@ -65695,19 +65700,84 @@ struct ViewController_IMPL {
 /* @end */
 
 
+typedef void (*blk_k)(void);
+
+
+#ifndef _REWRITER_typedef_Person
+#define _REWRITER_typedef_Person
+typedef struct objc_object Person;
+typedef struct {} _objc_exc_Person;
+#endif
+
+extern "C" unsigned long OBJC_IVAR_$_Person$_name;
+extern "C" unsigned long OBJC_IVAR_$_Person$_age;
+struct Person_IMPL {
+	struct NSObject_IMPL NSObject_IVARS;
+	NSString *_name;
+	NSInteger _age;
+};
+
+
+// @property (nonatomic,copy) NSString *name;
+// @property (nonatomic, assign) NSInteger age;
+
+/* @end */
+
+
+// @implementation Person
+
+
+static NSString * _I_Person_description(Person * self, SEL _cmd) {
+    return ((NSString * _Nonnull (*)(id, SEL, NSString * _Nonnull, ...))(void *)objc_msgSend)((id)objc_getClass("NSString"), sel_registerName("stringWithFormat:"), (NSString *)&__NSConstantStringImpl__var_folders_ds_b39fj4_50m17wz1nfpxf0_0r0000gn_T_ViewController_d953e0_mi_0, ((NSString *(*)(id, SEL))(void *)objc_msgSend)((id)self, sel_registerName("name")), ((NSInteger (*)(id, SEL))(void *)objc_msgSend)((id)self, sel_registerName("age")));
+}
+
+
+static NSString * _I_Person_name(Person * self, SEL _cmd) { return (*(NSString **)((char *)self + OBJC_IVAR_$_Person$_name)); }
+extern "C" __declspec(dllimport) void objc_setProperty (id, SEL, long, id, bool, bool);
+
+static void _I_Person_setName_(Person * self, SEL _cmd, NSString *name) { objc_setProperty (self, _cmd, __OFFSETOFIVAR__(struct Person, _name), (id)name, 0, 1); }
+
+static NSInteger _I_Person_age(Person * self, SEL _cmd) { return (*(NSInteger *)((char *)self + OBJC_IVAR_$_Person$_age)); }
+static void _I_Person_setAge_(Person * self, SEL _cmd, NSInteger age) { (*(NSInteger *)((char *)self + OBJC_IVAR_$_Person$_age)) = age; }
+// @end
+
 // @interface ViewController ()
 
 /* @end */
 
 
+
 // @implementation ViewController
+
+
+struct __globalBlk_block_impl_0 {
+  struct __block_impl impl;
+  struct __globalBlk_block_desc_0* Desc;
+  __globalBlk_block_impl_0(void *fp, struct __globalBlk_block_desc_0 *desc, int flags=0) {
+    impl.isa = &_NSConcreteGlobalBlock;
+    impl.Flags = flags;
+    impl.FuncPtr = fp;
+    Desc = desc;
+  }
+};
+static void __globalBlk_block_func_0(struct __globalBlk_block_impl_0 *__cself) {
+
+    NSLog((NSString *)&__NSConstantStringImpl__var_folders_ds_b39fj4_50m17wz1nfpxf0_0r0000gn_T_ViewController_d953e0_mi_1);
+}
+
+static struct __globalBlk_block_desc_0 {
+  size_t reserved;
+  size_t Block_size;
+} __globalBlk_block_desc_0_DATA = { 0, sizeof(struct __globalBlk_block_impl_0)};
+static __globalBlk_block_impl_0 __global_globalBlk_block_impl_0((void *)__globalBlk_block_func_0, &__globalBlk_block_desc_0_DATA);
+void (*globalBlk)(void) = ((void (*)())&__global_globalBlk_block_impl_0);
 
 
 struct __ViewController__viewDidLoad_block_impl_0 {
   struct __block_impl impl;
   struct __ViewController__viewDidLoad_block_desc_0* Desc;
-  int count;
-  __ViewController__viewDidLoad_block_impl_0(void *fp, struct __ViewController__viewDidLoad_block_desc_0 *desc, int _count, int flags=0) : count(_count) {
+  Person *person;
+  __ViewController__viewDidLoad_block_impl_0(void *fp, struct __ViewController__viewDidLoad_block_desc_0 *desc, Person *_person, int flags=0) : person(_person) {
     impl.isa = &_NSConcreteStackBlock;
     impl.Flags = flags;
     impl.FuncPtr = fp;
@@ -65715,22 +65785,32 @@ struct __ViewController__viewDidLoad_block_impl_0 {
   }
 };
 static void __ViewController__viewDidLoad_block_func_0(struct __ViewController__viewDidLoad_block_impl_0 *__cself) {
-   
-    int count = __cself->count; // bound by copy
-    NSLog((NSString *)&__NSConstantStringImpl__var_folders_ds_b39fj4_50m17wz1nfpxf0_0r0000gn_T_ViewController_14580b_mi_0, count);
-}
+  Person *person = __cself->person; // bound by copy
+
+        ((void (*)(id, SEL, NSInteger))(void *)objc_msgSend)((id)person, sel_registerName("setAge:"), (NSInteger)18);
+        NSLog((NSString *)&__NSConstantStringImpl__var_folders_ds_b39fj4_50m17wz1nfpxf0_0r0000gn_T_ViewController_d953e0_mi_3, person);
+    }
+static void __ViewController__viewDidLoad_block_copy_0(struct __ViewController__viewDidLoad_block_impl_0*dst, struct __ViewController__viewDidLoad_block_impl_0*src) {_Block_object_assign((void*)&dst->person, (void*)src->person, 3/*BLOCK_FIELD_IS_OBJECT*/);}
+
+static void __ViewController__viewDidLoad_block_dispose_0(struct __ViewController__viewDidLoad_block_impl_0*src) {_Block_object_dispose((void*)src->person, 3/*BLOCK_FIELD_IS_OBJECT*/);}
 
 static struct __ViewController__viewDidLoad_block_desc_0 {
   size_t reserved;
   size_t Block_size;
-} __ViewController__viewDidLoad_block_desc_0_DATA = { 0, sizeof(struct __ViewController__viewDidLoad_block_impl_0)};
+  void (*copy)(struct __ViewController__viewDidLoad_block_impl_0*, struct __ViewController__viewDidLoad_block_impl_0*);
+  void (*dispose)(struct __ViewController__viewDidLoad_block_impl_0*);
+} __ViewController__viewDidLoad_block_desc_0_DATA = { 0, sizeof(struct __ViewController__viewDidLoad_block_impl_0), __ViewController__viewDidLoad_block_copy_0, __ViewController__viewDidLoad_block_dispose_0};
 
 static void _I_ViewController_viewDidLoad(ViewController * self, SEL _cmd) {
     ((void (*)(__rw_objc_super *, SEL))(void *)objc_msgSendSuper)((__rw_objc_super){(id)self, (id)class_getSuperclass(objc_getClass("ViewController"))}, sel_registerName("viewDidLoad"));
+    Person *person = ((Person *(*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass("Person"), sel_registerName("new"));
+    ((void (*)(id, SEL, NSString *))(void *)objc_msgSend)((id)person, sel_registerName("setName:"), (NSString *)&__NSConstantStringImpl__var_folders_ds_b39fj4_50m17wz1nfpxf0_0r0000gn_T_ViewController_d953e0_mi_2);
+    ((void (*)(id, SEL, NSInteger))(void *)objc_msgSend)((id)person, sel_registerName("setAge:"), (NSInteger)27);
 
-    int count = 10;
-    void (* blk)(void) = ((void (*)())&__ViewController__viewDidLoad_block_impl_0((void *)__ViewController__viewDidLoad_block_func_0, &__ViewController__viewDidLoad_block_desc_0_DATA, count));
+    void (* blk)(void) = ((void (*)())&__ViewController__viewDidLoad_block_impl_0((void *)__ViewController__viewDidLoad_block_func_0, &__ViewController__viewDidLoad_block_desc_0_DATA, person, 570425344));
     ((void (*)(__block_impl *))((__block_impl *)blk)->FuncPtr)((__block_impl *)blk);
+    NSLog((NSString *)&__NSConstantStringImpl__var_folders_ds_b39fj4_50m17wz1nfpxf0_0r0000gn_T_ViewController_d953e0_mi_4, person);
+    NSLog((NSString *)&__NSConstantStringImpl__var_folders_ds_b39fj4_50m17wz1nfpxf0_0r0000gn_T_ViewController_d953e0_mi_5,((Class (*)(id, SEL))(void *)objc_msgSend)((id)blk, sel_registerName("class")));
 
 
 
@@ -65805,6 +65885,97 @@ struct _category_t {
 extern "C" __declspec(dllimport) struct objc_cache _objc_empty_cache;
 #pragma warning(disable:4273)
 
+extern "C" unsigned long int OBJC_IVAR_$_Person$_name __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct Person, _name);
+extern "C" unsigned long int OBJC_IVAR_$_Person$_age __attribute__ ((used, section ("__DATA,__objc_ivar"))) = __OFFSETOFIVAR__(struct Person, _age);
+
+static struct /*_ivar_list_t*/ {
+	unsigned int entsize;  // sizeof(struct _prop_t)
+	unsigned int count;
+	struct _ivar_t ivar_list[2];
+} _OBJC_$_INSTANCE_VARIABLES_Person __attribute__ ((used, section ("__DATA,__objc_const"))) = {
+	sizeof(_ivar_t),
+	2,
+	{{(unsigned long int *)&OBJC_IVAR_$_Person$_name, "_name", "@\"NSString\"", 3, 8},
+	 {(unsigned long int *)&OBJC_IVAR_$_Person$_age, "_age", "q", 3, 8}}
+};
+
+static struct /*_method_list_t*/ {
+	unsigned int entsize;  // sizeof(struct _objc_method)
+	unsigned int method_count;
+	struct _objc_method method_list[5];
+} _OBJC_$_INSTANCE_METHODS_Person __attribute__ ((used, section ("__DATA,__objc_const"))) = {
+	sizeof(_objc_method),
+	5,
+	{{(struct objc_selector *)"description", "@16@0:8", (void *)_I_Person_description},
+	{(struct objc_selector *)"name", "@16@0:8", (void *)_I_Person_name},
+	{(struct objc_selector *)"setName:", "v24@0:8@16", (void *)_I_Person_setName_},
+	{(struct objc_selector *)"age", "q16@0:8", (void *)_I_Person_age},
+	{(struct objc_selector *)"setAge:", "v24@0:8q16", (void *)_I_Person_setAge_}}
+};
+
+static struct /*_prop_list_t*/ {
+	unsigned int entsize;  // sizeof(struct _prop_t)
+	unsigned int count_of_properties;
+	struct _prop_t prop_list[2];
+} _OBJC_$_PROP_LIST_Person __attribute__ ((used, section ("__DATA,__objc_const"))) = {
+	sizeof(_prop_t),
+	2,
+	{{"name","T@\"NSString\",C,N,V_name"},
+	{"age","Tq,N,V_age"}}
+};
+
+static struct _class_ro_t _OBJC_METACLASS_RO_$_Person __attribute__ ((used, section ("__DATA,__objc_const"))) = {
+	1, sizeof(struct _class_t), sizeof(struct _class_t), 
+	(unsigned int)0, 
+	0, 
+	"Person",
+	0, 
+	0, 
+	0, 
+	0, 
+	0, 
+};
+
+static struct _class_ro_t _OBJC_CLASS_RO_$_Person __attribute__ ((used, section ("__DATA,__objc_const"))) = {
+	0, __OFFSETOFIVAR__(struct Person, _name), sizeof(struct Person_IMPL), 
+	(unsigned int)0, 
+	0, 
+	"Person",
+	(const struct _method_list_t *)&_OBJC_$_INSTANCE_METHODS_Person,
+	0, 
+	(const struct _ivar_list_t *)&_OBJC_$_INSTANCE_VARIABLES_Person,
+	0, 
+	(const struct _prop_list_t *)&_OBJC_$_PROP_LIST_Person,
+};
+
+extern "C" __declspec(dllimport) struct _class_t OBJC_METACLASS_$_NSObject;
+
+extern "C" __declspec(dllexport) struct _class_t OBJC_METACLASS_$_Person __attribute__ ((used, section ("__DATA,__objc_data"))) = {
+	0, // &OBJC_METACLASS_$_NSObject,
+	0, // &OBJC_METACLASS_$_NSObject,
+	0, // (void *)&_objc_empty_cache,
+	0, // unused, was (void *)&_objc_empty_vtable,
+	&_OBJC_METACLASS_RO_$_Person,
+};
+
+extern "C" __declspec(dllimport) struct _class_t OBJC_CLASS_$_NSObject;
+
+extern "C" __declspec(dllexport) struct _class_t OBJC_CLASS_$_Person __attribute__ ((used, section ("__DATA,__objc_data"))) = {
+	0, // &OBJC_METACLASS_$_Person,
+	0, // &OBJC_CLASS_$_NSObject,
+	0, // (void *)&_objc_empty_cache,
+	0, // unused, was (void *)&_objc_empty_vtable,
+	&_OBJC_CLASS_RO_$_Person,
+};
+static void OBJC_CLASS_SETUP_$_Person(void ) {
+	OBJC_METACLASS_$_Person.isa = &OBJC_METACLASS_$_NSObject;
+	OBJC_METACLASS_$_Person.superclass = &OBJC_METACLASS_$_NSObject;
+	OBJC_METACLASS_$_Person.cache = &_objc_empty_cache;
+	OBJC_CLASS_$_Person.isa = &OBJC_METACLASS_$_Person;
+	OBJC_CLASS_$_Person.superclass = &OBJC_CLASS_$_NSObject;
+	OBJC_CLASS_$_Person.cache = &_objc_empty_cache;
+}
+
 static struct /*_method_list_t*/ {
 	unsigned int entsize;  // sizeof(struct _objc_method)
 	unsigned int method_count;
@@ -65869,9 +66040,11 @@ static void OBJC_CLASS_SETUP_$_ViewController(void ) {
 }
 #pragma section(".objc_inithooks$B", long, read, write)
 __declspec(allocate(".objc_inithooks$B")) static void *OBJC_CLASS_SETUP[] = {
+	(void *)&OBJC_CLASS_SETUP_$_Person,
 	(void *)&OBJC_CLASS_SETUP_$_ViewController,
 };
-static struct _class_t *L_OBJC_LABEL_CLASS_$ [1] __attribute__((used, section ("__DATA, __objc_classlist,regular,no_dead_strip")))= {
+static struct _class_t *L_OBJC_LABEL_CLASS_$ [2] __attribute__((used, section ("__DATA, __objc_classlist,regular,no_dead_strip")))= {
+	&OBJC_CLASS_$_Person,
 	&OBJC_CLASS_$_ViewController,
 };
 static struct IMAGE_INFO { unsigned version; unsigned flag; } _OBJC_IMAGE_INFO = { 0, 2 };

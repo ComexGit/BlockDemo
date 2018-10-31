@@ -10,14 +10,7 @@
 #import "AppDelegate.h"
 
 int main(int argc, char * argv[]) {
-    @autoreleasepool {
-        
-        int count = 10;
-        void (^ blk)(void) = ^(){
-            NSLog(@"In Block:%d", count);
-        };
-        blk();
-        
+    @autoreleasepool {        
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
